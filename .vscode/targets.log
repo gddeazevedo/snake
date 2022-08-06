@@ -8,7 +8,7 @@ make: *** No rule to make target 'lib/*/*', needed by 'main'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Aug  4 21:27:42 2022
+# Make data base, printed on Sat Aug  6 17:37:15 2022
 
 # Variables
 
@@ -59,7 +59,7 @@ XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.QS9CQ1
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.2469
+GNOME_TERMINAL_SERVICE = :1.3128
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -91,7 +91,7 @@ MAKEFILE_LIST := makefile
 # environment
 ZSH = /home/gabriel/.oh-my-zsh
 # environment
-VSCODE_PID = 68963
+VSCODE_PID = 93176
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -107,7 +107,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"dc7ba51c4efcfec965eaa07de065afd6.pt-br","_translationsConfigFile":"/home/gabriel/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/tcf.json","_cacheRoot":"/home/gabriel/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br","_resolvedLanguagePackCoreLocation":"/home/gabriel/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/home/gabriel/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"99f206782a767a6d08ad4d4418aea476.pt-br","_translationsConfigFile":"/home/gabriel/.config/Code/clp/99f206782a767a6d08ad4d4418aea476.pt-br/tcf.json","_cacheRoot":"/home/gabriel/.config/Code/clp/99f206782a767a6d08ad4d4418aea476.pt-br","_resolvedLanguagePackCoreLocation":"/home/gabriel/.config/Code/clp/99f206782a767a6d08ad4d4418aea476.pt-br/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/home/gabriel/.config/Code/clp/99f206782a767a6d08ad4d4418aea476.pt-br/corrupted.info","_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-redhat-linux-gnu
 # makefile
@@ -119,7 +119,7 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 2
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/93b6e21c_3f25_436f_998a_4869e9474fcc
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/0b0e5fca_be94_4e8a_b18d_8b94caab491e
 # environment
 MAKELEVEL := 0
 # default
@@ -219,11 +219,10 @@ GDMSESSION = gnome
 
 # Directories
 
-# . (device 41, inode 310190): 9 files, no impossibilities.
- 
+# . (device 41, inode 310190): 11 files, no impossibilities.
 # lib: could not be stat'd.
 
-# 9 files, no impossibilities in 2 directories.
+# 11 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -246,13 +245,13 @@ all: main
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-04 21:08:45.231495666
+#  Last modified 2022-08-06 10:38:33.893506081
 #  File has been updated.
 #  Successfully updated.
 
 main: main.c lib/*/*
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-04 21:08:46.720493211
+#  Last modified 2022-08-06 10:25:05.910354416
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 4):
 	gcc main.c -lncurses -o main
@@ -278,12 +277,12 @@ makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 125 B / avg = 7 B
-# current buf: size = 8162 B / used = 125 B / count = 16 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 18 / storage = 141 B / avg = 7 B
+# current buf: size = 8162 B / used = 141 B / count = 18 / avg = 7 B
 
-# strcache performance: lookups = 26 / hit rate = 38%
+# strcache performance: lookups = 28 / hit rate = 35%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=0/26=0%
-# Finished Make data base on Thu Aug  4 21:27:42 2022
+# Load=18/8192=0%, Rehash=0, Collisions=0/28=0%
+# Finished Make data base on Sat Aug  6 17:37:15 2022
 
  
