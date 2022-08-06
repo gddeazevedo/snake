@@ -1,0 +1,8 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "files.associations": {
+        "settings.h": "c",
+        "snake.h": "c",
+        "linkedlist.h": "c"
+    }
+}
