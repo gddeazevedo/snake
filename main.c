@@ -1,64 +1,48 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <ncurses.h>
+#include <time.h>
 
 #include "src/Screen/Screen.h"
 #include "src/Game/Game.h"
 
 
+void delay(int milliseconds);
+
 int main(int argc, char** argv) {
-    while (true) {
-        system("clear");
-        printf("----JOGO DA COBRINHA----\n");
-        printf("Escolha uma opção:\n");
-        printf("(1) Jogar\n");
-        printf("(2) Ver placares\n");
-        printf("(3) Sair\n");
-
-        int option;
-        scanf("%d", &option);
-
-        if (option == 1) {
-            break;
-        } else if (option == 2) {
-            // TODO: show scores
-        } else if (option == 3) {
-            return 0;
-        }
-    }
-
-
     Screen* screen = _Screen();
 
     initscr();
     refresh();
+    clear();
     noecho();
     curs_set(false);
 
     Game* game = _Game(screen);
 
-    while (true) {
+    while (!game->is_over) {
         process_input(game);
         update_state(game);
         redraw(game);
-
-        if (game->is_over) {
-            printw("Game over! Press 'p' to play again or 'q' to exit!");
-
-            while (true) {
-                chtype input = getch();
-
-                if (input == 'p') {
-                    restart(game);
-                    break;
-                } else if (input == 'q') {
-                    endwin();
-                    return 0;
-                }
-            }
-        }
     }
 
+    delay(1000);
+
     endwin();
+
+    system("clear");
+
+    printf("GAMEOVER\nThanks for playing\n");
+
     return 0;
+}
+
+
+void delay(int milliseconds) {
+    long pause;
+    clock_t now,then;
+
+    pause = milliseconds*(CLOCKS_PER_SEC/1000);
+    now = then = clock();
+    while( (now-then) < pause )
+        now = clock();
 }

@@ -5,10 +5,16 @@ Game* _Game(Screen* screen) {
     Game* game = (Game*) malloc(sizeof(Game));
     
     game->screen = screen;
+    int score_row = screen->start_row + screen->height;
+    int score_col = screen->start_col;
+    game->board = _Scoreboard(screen->width, score_row, score_col);
     game->is_over = false;
     game->snake = _Snake(screen->width / 2, screen->height / 2);
-
     game->food = _Food(5, 5);
+    game->score = 0;
+
+
+    init_scoreboard(game->board, game->score);
 
     render_screen(screen);
     init_screen(screen);
@@ -18,6 +24,7 @@ Game* _Game(Screen* screen) {
 
 void redraw(Game* game) {
     refresh_screen(game->screen);
+    refresh_scorebboard(game->board);
 }
 
 void process_input(Game* game) {
@@ -50,7 +57,6 @@ void process_input(Game* game) {
 void update_state(Game* game){
     Block next_head = get_next_head(game->snake);
 
-
     if (game->food != NULL) {
         chtype char_at = get_char_at(game->screen, next_head.x, next_head.y);
 
@@ -59,6 +65,8 @@ void update_state(Game* game){
                 draw_block(game->screen, *game->food, ' ');
                 restore_tail(game->snake);
                 game->food = NULL;
+                game->score += 10;
+                update_scoreboard(game->board, game->score);
                 break;
             case ' ':
                 move_snake(game->snake);

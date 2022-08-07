@@ -1,35 +1,11 @@
 #include "Screen.h"
 
 
-int difficultty;
-
-
 Screen* _Screen() {
     srand(time(NULL));
     Screen* screen = (Screen*) malloc(sizeof(Screen));
 
-    int dim = 20;
-
-    while (true) {
-        system("clear");
-        printf("\n\nEscolha uma dificuldade:\n");
-        printf("(1) Díficil\n");
-        printf("(2) Médio\n");
-        printf("(3) Fácil\n");
-
-        scanf("%d", &difficultty);
-
-        if (difficultty == 1) {
-            dim = 10;
-            break;
-        } else if (difficultty == 2) {
-            dim = 15;
-            break;
-        } else if (difficultty == 3) {
-            dim = 20;
-            break;
-        }
-    }
+    int dim = 16;
 
     screen->height = dim;
     screen->width = dim * 2.5;
@@ -46,15 +22,11 @@ void init_screen(Screen* screen) {
 void render_screen(Screen* screen) {
     int x, y;
     getmaxyx(stdscr, y, x);
-    screen->window = newwin(screen->height, screen->width, (y / 2) - (screen->height/ 2), (x / 2) - (screen->width / 2));
-    
-    if (difficultty == 1) {
-        wtimeout(screen->window, HARD);
-    } else if (difficultty == 2) {
-        wtimeout(screen->window, NORMAL);
-    } else {
-        wtimeout(screen->window, EASY);
-    }
+    screen->start_row = (y / 2) - (screen->height/ 2);
+    screen->start_col = (x / 2) - (screen->width / 2);
+    screen->window = newwin(screen->height, screen->width, screen->start_row, screen->start_col);
+
+    wtimeout(screen->window, 120);
     keypad(screen->window, true); // allows us to capture arrow keys
 }
 

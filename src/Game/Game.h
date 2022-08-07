@@ -9,6 +9,7 @@
 #include "../Block/Block.h"
 #include "../Food/Food.h"
 #include "../Snake/Snake.h"
+#include "../Scoreboard/Scoreboard.h"
 
 
 typedef struct {
@@ -16,6 +17,8 @@ typedef struct {
     Food* food;
     Snake* snake;
     bool is_over;
+    int score;
+    Scoreboard* board;
 } Game;
 
 Game* _Game(Screen* screen);
@@ -23,7 +26,6 @@ void redraw(Game* game);
 void process_input(Game* game);
 void update_state(Game* game);
 void restart(Game* game);
-
 
 
 #endif

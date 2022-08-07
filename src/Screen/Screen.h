@@ -9,15 +9,12 @@
 #include "../Block/Block.h"
 
 
-#define HARD 100
-#define NORMAL 120
-#define EASY 140
-
-
 typedef struct {
     WINDOW* window;
     int height;
     int width;
+    int start_row;
+    int start_col;
 } Screen;
 
 
